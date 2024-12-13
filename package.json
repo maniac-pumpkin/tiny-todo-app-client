@@ -53,6 +53,7 @@
     "@tanstack/router-devtools": "^1.79.0",
     "@tanstack/router-plugin": "^1.79.0",
     "@types/js-cookie": "^3.0.6",
+    "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
