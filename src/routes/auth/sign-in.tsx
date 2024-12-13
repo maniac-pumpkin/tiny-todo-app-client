@@ -10,7 +10,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { isAuthenticated, signIn } from "@/lib/auth"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { createFileRoute, redirect, useNavigate } from "@tanstack/react-router"
+import {
+  createFileRoute,
+  Link,
+  redirect,
+  useNavigate,
+} from "@tanstack/react-router"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -108,6 +113,7 @@ function RouteComponent() {
             )}
           />
           <Button type="submit">Sign in</Button>
+          <Link to="/auth/sign-up">Go to sign-up page</Link>
         </form>
       </FormWrapper>
     </section>
