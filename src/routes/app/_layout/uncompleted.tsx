@@ -1,9 +1,17 @@
-import TaskCardWrapper from '@/components/task-card/task-card-wrapper'
-import useTasks from '@/stores/use-tasks'
-import { createFileRoute } from '@tanstack/react-router'
-import { useEffect } from 'react'
+import TaskCardWrapper from "@/components/task-card/task-card-wrapper"
+import { isAuthenticated } from "@/lib/auth"
+import useTasks from "@/stores/use-tasks"
+import { createFileRoute, redirect } from "@tanstack/react-router"
+import { useEffect } from "react"
 
-export const Route = createFileRoute('/app/_layout/uncompleted')({
+export const Route = createFileRoute("/app/_layout/uncompleted")({
+  beforeLoad: () => {
+    if (!isAuthenticated())
+      throw redirect({
+        to: "/auth/sign-in",
+      })
+  },
+
   component: RouteComponent,
 })
 

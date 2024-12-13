@@ -174,7 +174,7 @@ function Directories() {
         <SidebarMenuButton isActive={dirName.toLowerCase() === dir} asChild>
           <Link
             from="/"
-            to="/directories/$dir"
+            to="/app/directories/$dir"
             params={{ dir: dirName.toLowerCase() }}
             search
           >

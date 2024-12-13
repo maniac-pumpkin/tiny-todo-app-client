@@ -6,22 +6,22 @@ const links = [
   {
     title: "All tasks",
     icon: <LayoutGrid />,
-    url: "/",
+    url: "/app",
   },
   {
     title: "Important tasks",
     icon: <Star />,
-    url: "/important",
+    url: "/app/important",
   },
   {
     title: "Completed tasks",
     icon: <CircleCheck />,
-    url: "/completed",
+    url: "/app/completed",
   },
   {
     title: "Uncompleted tasks",
     icon: <CircleX />,
-    url: "/uncompleted",
+    url: "/app/uncompleted",
   },
 ]
 

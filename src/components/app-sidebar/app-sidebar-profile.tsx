@@ -6,6 +6,8 @@ import {
 } from "@/components/ui/popover"
 import { SidebarHeader, SidebarMenuButton } from "@/components/ui/sidebar"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { signOut } from "@/lib/auth"
+import { useNavigate } from "@tanstack/react-router"
 import { ChevronRight } from "lucide-react"
 import { Button } from "../ui/button"
 import AppSidebarThemeSwitch from "./app-sidebar-theme-switch"
@@ -24,6 +26,7 @@ function AppSidebarAvatar() {
 
 function AppSidebarProfile() {
   const isMobile = useIsMobile()
+  const navigate = useNavigate()
 
   const side = isMobile ? "bottom" : "right"
   const align = isMobile ? "center" : "start"
@@ -44,6 +47,19 @@ function AppSidebarProfile() {
           </Button>
           <Button className="w-full" size="sm" variant="destructive">
             Delete account
+          </Button>
+          <Button
+            className="w-full"
+            size="sm"
+            variant="outline"
+            onClick={() => {
+              if (window.confirm("You sure?")) {
+                signOut()
+                navigate({ to: "/auth/sign-in" })
+              }
+            }}
+          >
+            Sign out
           </Button>
         </PopoverContent>
       </Popover>
